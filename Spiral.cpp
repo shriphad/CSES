@@ -19,9 +19,34 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll x, y;
-        cin >> y >> x;
-        cout << y << " " << x << "\n";
+        ll row, col;
+        cin >> row >> col;
+        if (row < col)
+        {
+            if (col % 2 == 1)
+            {
+                ll temp = col * col;
+                cout << temp - row + 1 << "\n";
+            }
+            else
+            {
+                ll temp = (col - 1) * (col - 1) + 1;
+                cout << temp + row - 1 << "\n";
+            }
+        }
+        else
+        {
+            if (row % 2 == 0)
+            {
+                ll temp = row * row;
+                cout << temp - col + 1 << "\n";
+            }
+            else
+            {
+                ll temp = (row - 1) * (row - 1) + 1;
+                cout << temp + col - 1 << "\n";
+            }
+        }
     }
     return 0;
 }
